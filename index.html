@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>To-Do List</title>
+        <link rel="stylesheet" href="css/todo.css">
+        <script src="js/todo.js"></script>
+    </head>
+    <body>
+        <input id="task">
+        <button id="add">Add Item</button>
+        <hr>
+        <div id="todos"></div>
+        <br>
+        <p id="myTasks"></p>
+        <br>
+        <p id="myTasks_2"></p>
+        <br>
+        <p id="myTasks_3"></p>
+
+        <script>
+            /*JavaScript Dictionary Object*/
+            var task = '{practice: "music", errand: "go to the store", cleaning: "vacuum", exercise: "bike ride"}';
+            /*Convert JavaScript objects to string format*/
+            var JSONstring = JSON.stringify(task);
+            document.getElementById("myTasks").innerHTML = JSONstring;
+            
+            /*This is a JSON string variable*/
+            var birdie = '{"breed": "Golden Doodle", "color": "Black and White", "age": "4"}';
+            /*Convert JSON strings to JavaScript objects*/
+            var JSONstring_2 = JSON.parse(birdie);
+            document.getElementById("myTasks_2").innerHTML = "My dog is a " + JSONstring_2.breed + " who is " 
+            + JSONstring_2.age;
+
+            /*set the data as a key/value pair to be saved locally in your browser*/
+            localStorage.setItem("Breed", "Golden Doodle");
+            /*then use the key "Breed" to return its value "Golden Doodle"*/
+            document.getElementById("myTasks_3").innerHTML = localStorage.getItem("Breed");
+
+            
+        </script>
+
+    </body>
+</html>
